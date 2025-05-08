@@ -7,51 +7,59 @@
     <title>Visco.hk Portfolio</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Roboto', Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #f9f9f9;
             color: #333;
         }
-        header {
-            background-color: #1a1a1a;
+        .hero {
+            background: linear-gradient(135deg, #ffc107 0%, #333 100%);
             color: white;
             text-align: center;
-            padding: 2em 0;
+            padding: 4em 1em;
         }
-        header h1 {
+        .hero h1 {
             margin: 0;
-            font-size: 2.5em;
+            font-size: 3em;
         }
-        header p {
+        .hero p {
             margin: 0.5em 0;
-            font-size: 1.2em;
+            font-size: 1.3em;
         }
         nav {
-            background-color: #333;
+            background-color: #1a1a1a;
             padding: 1em;
             text-align: center;
         }
         nav a {
             color: white;
             text-decoration: none;
-            margin: 0 1em;
+            margin: 0 1.5em;
             font-weight: bold;
         }
         nav a:hover {
             color: #ffc107;
         }
         .container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 2em auto;
             padding: 0 1em;
+        }
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5em;
         }
         .project {
             background-color: white;
             padding: 1.5em;
-            margin-bottom: 1.5em;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .project:hover {
+            transform: translateY(-5px);
         }
         .project h3 {
             color: #007BFF;
@@ -63,7 +71,7 @@
         }
         .logo-text {
             font-style: italic;
-            color: #ffc107;
+            color: #000;
         }
         footer {
             background-color: #1a1a1a;
@@ -75,8 +83,8 @@
             width: 100%;
         }
         @media (max-width: 600px) {
-            header h1 {
-                font-size: 1.8em;
+            .hero h1 {
+                font-size: 2em;
             }
             nav a {
                 display: block;
@@ -89,11 +97,11 @@
     </style>
 </head>
 <body>
-    <header>
+    <section class="hero">
         <h1>Visco.hk Portfolio</h1>
         <p>Showcasing innovative projects in Python, web development, AI, and design</p>
         <p class="logo-text">Logo: V-shaped sine curve (-90 to 90°) in yellow and black</p>
-    </header>
+    </section>
     <nav>
         <a href="#projects">Projects</a>
         <a href="#about">About</a>
@@ -102,69 +110,71 @@
     <div class="container">
         <section id="projects">
             <h2>My Projects</h2>
-            <div class="project">
-                <h3>Image Processing Script</h3>
-                <p>A Python script for processing images, featuring error handling with OpenCV's <code>cv2.seamlessClone</code> and dataset management for dolphin images (top and side views).</p>
-                <ul>
-                    <li>Technologies: Python, OpenCV</li>
-                    <li>Features: Error logging, batch processing</li>
-                </ul>
-            </div>
-            <div class="project">
-                <h3>YOLO Dataset Management</h3>
-                <p>Scripts to merge and update YOLO dataset labels, remapping classes like 'dop_side', 'dop_top', 'ship_side', 'ship_top' and updating <code>data.yaml</code>.</p>
-                <ul>
-                    <li>Technologies: Python</li>
-                    <li>Features: Class ID remapping, dataset configuration</li>
-                </ul>
-            </div>
-            <div class="project">
-                <h3>Flask Web Application</h3>
-                <p>A responsive Flask app with a header inspired by etaklogistics.com, featuring a leave application form with fixed apply dates and selectable leave ranges.</p>
-                <ul>
-                    <li>Technologies: Flask, HTML, CSS, Bootstrap</li>
-                    <li>Features: Responsive design, form handling</li>
-                </ul>
-            </div>
-            <div class="project">
-                <h3>MS SQL Report Generator</h3>
-                <p>A Python-based report generator using pyodbc, tkinter, and ReportLab, with a GUI for selecting report types and date ranges, exporting to PDF.</p>
-                <ul>
-                    <li>Technologies: Python, pyodbc, tkinter, ReportLab</li>
-                    <li>Features: GUI, PDF export, database integration</li>
-                </ul>
-            </div>
-            <div class="project">
-                <h3>Dynamic Directory Reader</h3>
-                <p>A Python script to dynamically read directory structures (e.g., <code>C:\github\py01\Etak\hr.bak</code>) and file contents, encoding binary files in base64.</p>
-                <ul>
-                    <li>Technologies: Python</li>
-                    <li>Features: Dynamic file reading, base64 encoding</li>
-                </ul>
-            </div>
-            <div class="project">
-                <h3>Vue.js and Arco Design Exploration</h3>
-                <p>Research into Vue.js for building user interfaces and Arco Design for enterprise UI components, aimed at modern web development.</p>
-                <ul>
-                    <li>Technologies: Vue.js, Arco Design</li>
-                    <li>Features: Component-based UI, enterprise design</li>
-                </ul>
-            </div>
-            <div class="project">
-                <h3>QR Code Frame and Poster</h3>
-                <p>Designed a professional QR code frame and poster for birthday party photo sharing, featuring elegant layouts with gold accents.</p>
-                <ul>
-                    <li>Technologies: Graphic Design</li>
-                    <li>Features: Elegant design, event branding</li>
-                </ul>
-            </div>
-            <div class="project">
-                <h3>Dolphin Image Editing</h3>
-                <p>Edited dolphin images to add realistic eyes, adjust glowing patterns, and change eye color to white for enhanced visual appeal.</p>
-                <ul>
-                    <li>Technologies: Image Editing</li>
-                    <li>Features: Realistic enhancements, color adjustments</li>
-                </ul>
+            <div class="projects-grid">
+                <div class="project">
+                    <h3>Image Processing Script</h3>
+                    <p>A Python script for processing images, featuring error handling with OpenCV's <code>cv2.seamlessClone</code> and dataset management for dolphin images (top and side views).</p>
+                    <ul>
+                        <li>Technologies: Python, OpenCV</li>
+                        <li>Features: Error logging, batch processing</li>
+                    </ul>
+                </div>
+                <div class="project">
+                    <h3>YOLO Dataset Management</h3>
+                    <p>Scripts to merge and update YOLO dataset labels, remapping classes like 'dop_side', 'dop_top', 'ship_side', 'ship_top' and updating <code>data.yaml</code>.</p>
+                    <ul>
+                        <li>Technologies: Python</li>
+                        <li>Features: Class ID remapping, dataset configuration</li>
+                    </ul>
+                </div>
+                <div class="project">
+                    <h3>Flask Web Application</h3>
+                    <p>A responsive Flask app with a header inspired by etaklogistics.com, featuring a leave application form with fixed apply dates and selectable leave ranges.</p>
+                    <ul>
+                        <li>Technologies: Flask, HTML, CSS, Bootstrap</li>
+                        <li>Features: Responsive design, form handling</li>
+                    </ul>
+                </div>
+                <div class="project">
+                    <h3>MS SQL Report Generator</h3>
+                    <p>A Python-based report generator using pyodbc, tkinter, and ReportLab, with a GUI for selecting report types and date ranges, exporting to PDF.</p>
+                    <ul>
+                        <li>Technologies: Python, pyodbc, tkinter, ReportLab</li>
+                        <li>Features: GUI, PDF export, database integration</li>
+                    </ul>
+                </div>
+                <div class="project">
+                    <h3>Dynamic Directory Reader</h3>
+                    <p>A Python script to dynamically read directory structures (e.g., <code>C:\github\py01\Etak\hr.bak</code>) and file contents, encoding binary files in base64.</p>
+                    <ul>
+                        <li>Technologies: Python</li>
+                        <li>Features: Dynamic file reading, base64 encoding</li>
+                    </ul>
+                </div>
+                <div class="project">
+                    <h3>Vue.js and Arco Design Exploration</h3>
+                    <p>Research into Vue.js for building user interfaces and Arco Design for enterprise UI components, aimed at modern web development.</p>
+                    <ul>
+                        <li>Technologies: Vue.js, Arco Design</li>
+                        <li>Features: Component-based UI, enterprise design</li>
+                    </ul>
+                </div>
+                <div class="project">
+                    <h3>QR Code Frame and Poster</h3>
+                    <p>Designed a professional QR code frame and poster for birthday party photo sharing, featuring elegant layouts with gold accents.</p>
+                    <ul>
+                        <li>Technologies: Graphic Design</li>
+                        <li>Features: Elegant design, event branding</li>
+                    </ul>
+                </div>
+                <div class="project">
+                    <h3>Dolphin Image Editing</h3>
+                    <p>Edited dolphin images to add realistic eyes, adjust glowing patterns, and change eye color to white for enhanced visual appeal.</p>
+                    <ul>
+                        <li>Technologies: Image Editing</li>
+                        <li>Features: Realistic enhancements, color adjustments</li>
+                    </ul>
+                </div>
             </div>
         </section>
         <section id="about">
@@ -178,7 +188,7 @@
         </section>
     </div>
     <footer>
-        <p>&copy; 2025 Visco.hk. All rights reserved.</p>
+        <p>© 2025 Visco.hk. All rights reserved.</p>
     </footer>
     <script>
         console.log("Visco.hk Portfolio loaded successfully!");

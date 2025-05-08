@@ -1,0 +1,211 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Poppins', 'Noto Sans TC', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+nav {
+    position: sticky;
+    top: 0;
+    background-color: #1a1a1a;
+    padding: 1em 2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.nav-logo {
+    font-size: 1.5em;
+    color: #ffc107;
+    font-weight: 600;
+}
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 2em;
+    font-weight: 400;
+}
+.nav-links a:hover {
+    color: #ffc107;
+}
+.lang-switcher {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
+    padding: 0.5em;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+.lang-switcher:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.hero {
+    position: relative;
+    color: white;
+    text-align: center;
+    padding: 5em 1em;
+    background: linear-gradient(135deg, #ffc107 0%, #1a1a1a 100%);
+    overflow: hidden;
+}
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.05),
+        rgba(255, 255, 255, 0.05) 10px,
+        transparent 10px,
+        transparent 20px
+    );
+    opacity: 0.3;
+    z-index: 0;
+}
+.hero > * {
+    position: relative;
+    z-index: 1;
+}
+.hero h1 {
+    font-size: 3em;
+    font-weight: 600;
+}
+.hero p {
+    font-size: 1.2em;
+    margin: 1em 0;
+}
+.cta-button {
+    display: inline-block;
+    padding: 0.8em 2em;
+    background-color: #fff;
+    color: #1a1a1a;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+.cta-button:hover {
+    background-color: #e0e0e0;
+}
+.container {
+    max-width: 1200px;
+    margin: 3em auto;
+    padding: 0 1em;
+    position: relative;
+}
+#projects {
+    position: relative;
+    padding: 2em 0;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="none" stroke="%23ffc107" stroke-opacity="0.2" stroke-width="2" d="M0,160 C320,300 640,100 960,200 C1280,300 1600,100 1440,160 L1440,320 L0,320 Z"></path></svg>') repeat-x center;
+    background-size: 100% auto;
+}
+.section-title {
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 2em;
+    color: #1a1a1a;
+}
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2em;
+}
+.project {
+    background-color: white;
+    padding: 1.5em;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+.project h3 {
+    color: #007BFF;
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+}
+.project p {
+    font-size: 0.95em;
+    color: #666;
+    margin-bottom: 1em;
+}
+.project ul {
+    padding-left: 1.5em;
+    font-size: 0.9em;
+    color: #333;
+}
+.about-section, .contact-section {
+    text-align: center;
+    margin: 3em 0;
+}
+footer {
+    position: relative;
+    background-color: #1a1a1a;
+    color: white;
+    text-align: center;
+    padding: 2em;
+    overflow: hidden;
+}
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.05),
+        rgba(255, 255, 255, 0.05) 10px,
+        transparent 10px,
+        transparent 20px
+    );
+    opacity: 0.3;
+    z-index: 0;
+}
+footer > * {
+    position: relative;
+    z-index: 1;
+}
+footer a {
+    color: #ffc107;
+    text-decoration: none;
+}
+footer a:hover {
+    text-decoration: underline;
+}
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 1em;
+    }
+    .nav-links a {
+        margin-left: 0;
+        margin-right: 1em;
+    }
+    .hero h1 {
+        font-size: 2em;
+    }
+    .hero p {
+        font-size: 1em;
+    }
+    #projects {
+        background-size: 200% auto;
+    }
+}

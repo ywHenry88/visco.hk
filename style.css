@@ -141,10 +141,13 @@ nav {
     margin-bottom: 0.5em;
 }
 .project-image {
-    width: 100%;
-    height: auto;
-    margin-bottom: 1em;
+    max-width: 100%; /* Ensure image doesn't exceed container width */
+    width: 250px; /* Set a fixed width for consistency */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 auto 1em; /* Center the image and add spacing below */
+    display: block; /* Ensure centering works */
     border-radius: 5px;
+    object-fit: cover; /* Ensure image scales nicely without distortion */
 }
 .project p {
     font-size: 0.95em;
@@ -213,5 +216,9 @@ footer a:hover {
     }
     #projects {
         background-size: 200% auto;
+    }
+    .project-image {
+        width: 100%; /* On smaller screens, use full width */
+        max-width: 250px; /* But cap it to prevent distortion */
     }
 }

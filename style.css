@@ -25,7 +25,7 @@ nav {
     gap: 0.5em;
 }
 .nav-logo-image {
-    height: 40px;
+    height: 35px; /* Adjusted for desktop */
     width: auto;
 }
 .nav-logo span {
@@ -218,10 +218,10 @@ footer a:hover {
         margin-right: 1em;
     }
     .nav-logo-image {
-        height: 30px; /* Smaller height for mobile */
+        height: 30px; /* Keep mobile size as is */
     }
     .nav-logo span {
-        font-size: 1.2em; /* Smaller text for mobile */
+        font-size: 1.2em;
     }
     .hero h1 {
         font-size: 2em;

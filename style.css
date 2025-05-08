@@ -22,11 +22,11 @@ nav {
 .nav-logo {
     display: flex;
     align-items: center;
-    gap: 0.5em; /* Space between logo and text */
+    gap: 0.5em;
 }
 .nav-logo-image {
-    height: 40px; /* Adjust height as needed */
-    width: auto; /* Maintain aspect ratio */
+    height: 40px;
+    width: auto;
 }
 .nav-logo span {
     font-size: 1.5em;
@@ -152,49 +152,88 @@ nav {
 .project-image {
     max-width: 100%;
     width: 250px;
-    height: auto "#### Step 4: Update Files in Your Repository
-
-1. **Update `index.html`**:
-   - Go to `https://github.com/ywHenry88/visco.hk`.
-   - Navigate to `index.html` in the `main` branch.
-   - Click the pencil icon to edit.
-   - Replace the content with the updated `index.html` from the artifact above.
-   - Commit with a message like “Add logo to navigation bar”.
-
-2. **Update `style.css`**:
-   - Navigate to `style.css` in the `main` branch.
-   - Click the pencil icon to edit.
-   - Replace the content with the updated `style.css` from the artifact above.
-   - Commit with a message like “Style logo in navigation bar”.
-
-### Step 5: Verify the Logo Path
-- Confirm the logo file path (`images/logo.png`) matches the actual file name and path in your repository.
-- Check for case sensitivity (e.g., `logo.png` vs. `Logo.PNG`) and exact spelling.
-- If the file name or path differs, update the `src` attribute in `index.html`:
-  - Edit `index.html` again.
-  - Change the `src` attribute, e.g., `<img src="images/your-actual-logo-name.png" ...>`.
-  - Commit the change.
-
-### Step 6: Verify the Deployment
-- Wait a few minutes for GitHub Pages to update the site (since it’s set to deploy from the `main` branch).
-- Visit `https://ywHenry88.github.io/visco.hk/`.
-- Check the top left corner:
-  - The logo should appear to the left of the "Visco"/"域高" text.
-  - When you toggle the language (using the 🌐 button), the text should switch between "Visco" and "域高" while the logo remains in place.
-- If the logo doesn’t load and you see the error message (“Error: Unable to load logo. Please check the file path.”), update the `src` attribute as described above.
-
-### Step 7: Adjust Logo Size if Needed
-If the logo size doesn’t look right (e.g., too large or too small), you can adjust the `height` value in the `.nav-logo-image` class in `style.css`. For example:
-- Edit `style.css` and change:
-  ```css
-  .nav-logo-image {
-      height: 40px; /* Adjust this value */
-      width: auto;
-  }
-  ```
-- Try values like `30px` or `50px` to find the right size, then re-commit.
-
-### Expected Outcome
-The logo should now appear in the top left corner of your website, next to the "Visco"/"域高" text, which will still toggle between English and Chinese when you use the language switcher. The layout should look balanced, with the logo and text aligned horizontally.
-
-Let me know if you encounter any issues or need further adjustments!
+    height: auto;
+    margin: 0 auto 1em;
+    display: block;
+    border-radius: 5px;
+    object-fit: cover;
+}
+.project p {
+    font-size: 0.95em;
+    color: #666;
+    margin-bottom: 1em;
+}
+.project ul {
+    padding-left: 1.5em;
+    font-size: 0.9em;
+    color: #333;
+}
+.about-section, .contact-section {
+    text-align: center;
+    margin: 3em 0;
+}
+footer {
+    position: relative;
+    background-color: #1a1a1a;
+    color: white;
+    text-align: center;
+    padding: 2em;
+    overflow: hidden;
+}
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.05),
+        rgba(255, 255, 255, 0.05) 10px,
+        transparent 10px,
+        transparent 20px
+    );
+    opacity: 0.3;
+    z-index: 0;
+}
+footer > * {
+    position: relative;
+    z-index: 1;
+}
+footer a {
+    color: #ffc107;
+    text-decoration: none;
+}
+footer a:hover {
+    text-decoration: underline;
+}
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 1em;
+    }
+    .nav-links a {
+        margin-left: 0;
+        margin-right: 1em;
+    }
+    .nav-logo-image {
+        height: 30px; /* Smaller height for mobile */
+    }
+    .nav-logo span {
+        font-size: 1.2em; /* Smaller text for mobile */
+    }
+    .hero h1 {
+        font-size: 2em;
+    }
+    .hero p {
+        font-size: 1em;
+    }
+    #projects {
+        background-size: 200% auto;
+    }
+    .project-image {
+        width: 100%;
+        max-width: 250px;
+    }
+}

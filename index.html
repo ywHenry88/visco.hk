@@ -6,223 +6,11 @@
     <meta name="description" content="Portfolio of Visco showcasing Python, web development, AI, and design projects.">
     <title>Visco Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Noto+Sans+TC:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Poppins', 'Noto Sans TC', sans-serif;
-            background-color: #f5f5f5;
-            color: #333;
-        }
-        nav {
-            position: sticky;
-            top: 0;
-            background-color: #1a1a1a;
-            padding: 1em 2em;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        .nav-logo {
-            font-size: 1.5em;
-            color: #ffc107;
-            font-weight: 600;
-        }
-        .nav-right {
-            display: flex;
-            align-items: center;
-            gap: 1em;
-        }
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            margin-left: 2em;
-            font-weight: 400;
-        }
-        .nav-links a:hover {
-            color: #ffc107;
-        }
-        .lang-switcher {
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.2em;
-            cursor: pointer;
-            padding: 0.5em;
-            border-radius: 50%;
-            transition: background-color 0.3s ease;
-        }
-        .lang-switcher:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-        .hero {
-            position: relative;
-            color: white;
-            text-align: center;
-            padding: 5em 1em;
-            background: linear-gradient(135deg, #ffc107 0%, #1a1a1a 100%);
-            overflow: hidden;
-        }
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: repeating-linear-gradient(
-                45deg,
-                rgba(255, 255, 255, 0.05),
-                rgba(255, 255, 255, 0.05) 10px,
-                transparent 10px,
-                transparent 20px
-            );
-            opacity: 0.3;
-            z-index: 0;
-        }
-        .hero > * {
-            position: relative;
-            z-index: 1;
-        }
-        .hero h1 {
-            font-size: 3em;
-            font-weight: 600;
-        }
-        .hero p {
-            font-size: 1.2em;
-            margin: 1em 0;
-        }
-        .cta-button {
-            display: inline-block;
-            padding: 0.8em 2em;
-            background-color: #fff;
-            color: #1a1a1a;
-            text-decoration: none;
-            border-radius: 25px;
-            font-weight: 600;
-            transition: background-color 0.3s ease;
-        }
-        .cta-button:hover {
-            background-color: #e0e0e0;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 3em auto;
-            padding: 0 1em;
-            position: relative;
-        }
-        #projects {
-            position: relative;
-            padding: 2em 0;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="none" stroke="%23ffc107" stroke-opacity="0.2" stroke-width="2" d="M0,160 C320,300 640,100 960,200 C1280,300 1600,100 1440,160 L1440,320 L0,320 Z"></path></svg>') repeat-x center;
-            background-size: 100% auto;
-        }
-        .section-title {
-            font-size: 2em;
-            text-align: center;
-            margin-bottom: 2em;
-            color: #1a1a1a;
-        }
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2em;
-        }
-        .project {
-            background-color: white;
-            padding: 1.5em;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .project:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-        }
-        .project h3 {
-            color: #007BFF;
-            font-size: 1.5em;
-            margin-bottom: 0.5em;
-        }
-        .project p {
-            font-size: 0.95em;
-            color: #666;
-            margin-bottom: 1em;
-        }
-        .project ul {
-            padding-left: 1.5em;
-            font-size: 0.9em;
-            color: #333;
-        }
-        .about-section, .contact-section {
-            text-align: center;
-            margin: 3em 0;
-        }
-        footer {
-            position: relative;
-            background-color: #1a1a1a;
-            color: white;
-            text-align: center;
-            padding: 2em;
-            overflow: hidden;
-        }
-        footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: repeating-linear-gradient(
-                0deg,
-                rgba(255, 255, 255, 0.05),
-                rgba(255, 255, 255, 0.05) 10px,
-                transparent 10px,
-                transparent 20px
-            );
-            opacity: 0.3;
-            z-index: 0;
-        }
-        footer > * {
-            position: relative;
-            z-index: 1;
-        }
-        footer a {
-            color: #ffc107;
-            text-decoration: none;
-        }
-        footer a:hover {
-            text-decoration: underline;
-        }
-        @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-                gap: 1em;
-            }
-            .nav-links a {
-                margin-left: 0;
-                margin-right: 1em;
-            }
-            .hero h1 {
-                font-size: 2em;
-            }
-            .hero p {
-                font-size: 1em;
-            }
-            #projects {
-                background-size: 200% auto;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <nav>
-        <div class="nav-logo">Visco</div>
+        <div class="nav-logo">Visco 域高</div>
         <div class="nav-right">
             <div class="nav-links">
                 <a href="#projects" data-lang-key="nav-projects">Projects</a>
@@ -233,7 +21,7 @@
         </div>
     </nav>
     <section class="hero">
-        <h1 data-lang-key="hero-title">Welcome to Visco</h1>
+        <h1 data-lang-key="hero-title">Welcome to Visco 域高</h1>
         <p data-lang-key="hero-subtitle">Discover our innovative projects in Python, web development, AI, and design</p>
         <a href="#projects" class="cta-button" data-lang-key="hero-cta">Explore Projects</a>
     </section>
@@ -241,6 +29,14 @@
         <section id="projects">
             <h2 class="section-title" data-lang-key="projects-title">Our Projects</h2>
             <div class="projects-grid">
+                <div class="project">
+                    <h3 data-lang-key="project-0-title">VTOL Drone for Marine Mammal Surveys</h3>
+                    <p data-lang-key="project-0-desc">A cutting-edge VTOL drone system for line transect surveys and Photo ID observation of marine mammals, focusing on Chinese white dolphin (<i>Sousa chinensis</i>) and finless porpoise (<i>Neophocaena</i>). Powered by AI-driven image recognition and eco-friendly electric propulsion, it ensures precise data collection with minimal environmental impact.</p>
+                    <ul>
+                        <li data-lang-key="project-0-tech">Technologies: Python, AI, Drone Technology</li>
+                        <li data-lang-key="project-0-features">Features: Real-time species identification, low-carbon footprint, high-resolution imaging</li>
+                    </ul>
+                </div>
                 <div class="project">
                     <h3 data-lang-key="project-1-title">Image Processing Script</h3>
                     <p data-lang-key="project-1-desc">A Python script for processing images, featuring error handling with OpenCV's <code>cv2.seamlessClone</code> and dataset management for drone-captured dolphin images (top and side views).</p>
@@ -309,7 +105,7 @@
         </section>
         <section id="about" class="about-section">
             <h2 class="section-title" data-lang-key="about-title">About Us</h2>
-            <p data-lang-key="about-desc">Visco is a leading technology firm headquartered in Hong Kong, with over 20 years of experience, renowned for its expertise in artificial intelligence, drone technology, advanced surveillance systems, and system development. Our mission is to provide cutting-edge, data-driven solutions that empower clients to tackle intricate challenges in data analytics, aerial reconnaissance, security infrastructure, and custom system development with unparalleled precision and efficiency.</p>
+            <p data-lang-key="about-desc">Visco 域高 is a leading technology firm headquartered in Hong Kong, with over 20 years of experience, renowned for its expertise in artificial intelligence, drone technology, advanced surveillance systems, and system development. Our mission is to provide cutting-edge, data-driven solutions that empower clients to tackle intricate challenges in data analytics, aerial reconnaissance, security infrastructure, and custom system development with unparalleled precision and efficiency.</p>
         </section>
         <section id="contact" class="contact-section">
             <h2 class="section-title" data-lang-key="contact-title">Contact</h2>
@@ -318,7 +114,7 @@
         </section>
     </div>
     <footer>
-        <p data-lang-key="footer-copyright">© 2025 Visco. All rights reserved.</p>
+        <p data-lang-key="footer-copyright">© 2025 Visco 域高. All rights reserved.</p>
         <p><a href="mailto:info@visco.hk" data-lang-key="footer-contact">Contact Us</a></p>
     </footer>
     <script>
@@ -327,10 +123,14 @@
                 "nav-projects": "Projects",
                 "nav-about": "About",
                 "nav-contact": "Contact",
-                "hero-title": "Welcome to Visco",
+                "hero-title": "Welcome to Visco 域高",
                 "hero-subtitle": "Discover our innovative projects in Python, web development, AI, and design",
                 "hero-cta": "Explore Projects",
                 "projects-title": "Our Projects",
+                "project-0-title": "VTOL Drone for Marine Mammal Surveys",
+                "project-0-desc": "A cutting-edge VTOL drone system for line transect surveys and Photo ID observation of marine mammals, focusing on Chinese white dolphin (<i>Sousa chinensis</i>) and finless porpoise (<i>Neophocaena</i>). Powered by AI-driven image recognition and eco-friendly electric propulsion, it ensures precise data collection with minimal environmental impact.",
+                "project-0-tech": "Technologies: Python, AI, Drone Technology",
+                "project-0-features": "Features: Real-time species identification, low-carbon footprint, high-resolution imaging",
                 "project-1-title": "Image Processing Script",
                 "project-1-desc": "A Python script for processing images, featuring error handling with OpenCV's <code>cv2.seamlessClone</code> and dataset management for drone-captured dolphin images (top and side views).",
                 "project-1-tech": "Technologies: Python, OpenCV",
@@ -364,21 +164,25 @@
                 "project-8-tech": "Technologies: Image Editing",
                 "project-8-features": "Features: Realistic enhancements, color adjustments",
                 "about-title": "About Us",
-                "about-desc": "Visco is a leading technology firm headquartered in Hong Kong, with over 20 years of experience, renowned for its expertise in artificial intelligence, drone technology, advanced surveillance systems, and system development. Our mission is to provide cutting-edge, data-driven solutions that empower clients to tackle intricate challenges in data analytics, aerial reconnaissance, security infrastructure, and custom system development with unparalleled precision and efficiency.",
+                "about-desc": "Visco 域高 is a leading technology firm headquartered in Hong Kong, with over 20 years of experience, renowned for its expertise in artificial intelligence, drone technology, advanced surveillance systems, and system development. Our mission is to provide cutting-edge, data-driven solutions that empower clients to tackle intricate challenges in data analytics, aerial reconnaissance, security infrastructure, and custom system development with unparalleled precision and efficiency.",
                 "contact-title": "Contact",
                 "contact-text": "Reach out to discuss projects or collaborations:",
                 "contact-email": "Email: <a href=\"mailto:info@visco.hk\">info@visco.hk</a>",
-                "footer-copyright": "© 2025 Visco. All rights reserved.",
+                "footer-copyright": "© 2025 Visco 域高. All rights reserved.",
                 "footer-contact": "Contact Us"
             },
             zh: {
                 "nav-projects": "項目",
                 "nav-about": "關於",
                 "nav-contact": "聯繫",
-                "hero-title": "歡迎體驗 Visco",
+                "hero-title": "歡迎體驗 Visco 域高",
                 "hero-subtitle": "探索我們在 Python、網頁開發、人工智能及設計方面的創新項目",
                 "hero-cta": "探索項目",
                 "projects-title": "我們的項目",
+                "project-0-title": "VTOL無人機海洋哺乳動物調查",
+                "project-0-desc": "一個尖端的VTOL無人機系統，用於海洋哺乳動物的線性調查和照片識別觀察，專注於中華白海豚（<i>Sousa chinensis</i>）和江豚（<i>Neophocaena</i>）。採用人工智能驅動的圖像識別和環保的電動推進技術，確保精確的數據收集，同時對環境影響最小。",
+                "project-0-tech": "技術：Python，人工智能，無人機技術",
+                "project-0-features": "功能：實時物種識別，低碳足跡，高分辨率成像",
                 "project-1-title": "圖像處理腳本",
                 "project-1-desc": "一個用於處理圖像的 Python 腳本，具備 OpenCV 的 <code>cv2.seamlessClone</code> 錯誤處理功能，以及管理無人機拍攝的海豚圖像數據集（頂視圖和側視圖）。",
                 "project-1-tech": "技術：Python, OpenCV",
@@ -412,11 +216,11 @@
                 "project-8-tech": "技術：圖像編輯",
                 "project-8-features": "功能：逼真增強，顏色調整",
                 "about-title": "關於我們",
-                "about-desc": "Visco 是一家總部設於香港的領先科技公司，擁有超過 20 年的經驗，以其在人工智能、無人機技術、先進監控系統及系統開發方面的專業知識而聞名。我們的使命是提供尖端、數據驅動的解決方案，幫助客戶以無與倫比的精確度和效率應對數據分析、空中偵察、安全基礎設施及定制系統開發中的複雜挑戰。",
+                "about-desc": "Visco 域高 是一家總部設於香港的領先科技公司，擁有超過 20 年的經驗，以其在人工智能、無人機技術、先進監控系統及系統開發方面的專業知識而聞名。我們的使命是提供尖端、數據驅動的解決方案，幫助客戶以無與倫比的精確度和效率應對數據分析、空中偵察、安全基礎設施及定制系統開發中的複雜挑戰。",
                 "contact-title": "聯繫我們",
                 "contact-text": "聯繫我們以討論項目或合作：",
                 "contact-email": "電郵：<a href=\"mailto:info@visco.hk\">info@visco.hk</a>",
-                "footer-copyright": "© 2025 Visco。版權所有。",
+                "footer-copyright": "© 2025 Visco 域高。版權所有。",
                 "footer-contact": "聯繫我們"
             }
         };
@@ -428,7 +232,7 @@
             document.querySelector('html').lang = currentLang === 'en' ? 'en' : 'zh-Hant';
             document.querySelectorAll('[data-lang-key]').forEach(element => {
                 const key = element.getAttribute('data-lang-key');
-                if (translations[currentLang][key].includes('<a')) {
+                if (translations[currentLang][key].includes('<a') || translations[currentLang][key].includes('<i')) {
                     element.innerHTML = translations[currentLang][key];
                 } else {
                     element.textContent = translations[currentLang][key];

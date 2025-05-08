@@ -10,7 +10,11 @@
 </head>
 <body>
     <nav>
-        <div class="nav-logo" data-lang-key="company-name">Visco</div>
+        <div class="nav-logo">
+            <img src="images/logo.png" alt="Visco Logo" class="nav-logo-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <div style="display: none; color: red;">Error: Unable to load logo. Please check the file path.</div>
+            <span data-lang-key="company-name">Visco</span>
+        </div>
         <div class="nav-right">
             <div class="nav-links">
                 <a href="#projects" data-lang-key="nav-projects">Projects</a>

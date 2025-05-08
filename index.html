@@ -43,11 +43,33 @@
             color: #ffc107;
         }
         .hero {
-            background: linear-gradient(135deg, #ffc107 0%, #1a1a1a 100%);
+            position: relative;
             color: white;
             text-align: center;
             padding: 5em 1em;
+            background: linear-gradient(135deg, #ffc107 0%, #1a1a1a 100%);
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                45deg,
+                rgba(255, 255, 255, 0.05),
+                rgba(255, 255, 255, 0.05) 10px,
+                transparent 10px,
+                transparent 20px
+            );
+            opacity: 0.3;
+            z-index: 0;
+        }
+        .hero > * {
             position: relative;
+            z-index: 1;
         }
         .hero h1 {
             font-size: 3em;
@@ -74,6 +96,13 @@
             max-width: 1200px;
             margin: 3em auto;
             padding: 0 1em;
+            position: relative;
+        }
+        #projects {
+            position: relative;
+            padding: 2em 0;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="none" stroke="%23ffc107" stroke-opacity="0.2" stroke-width="2" d="M0,160 C320,300 640,100 960,200 C1280,300 1600,100 1440,160 L1440,320 L0,320 Z"></path></svg>') repeat-x center;
+            background-size: 100% auto;
         }
         .section-title {
             font-size: 2em;
@@ -117,10 +146,33 @@
             margin: 3em 0;
         }
         footer {
+            position: relative;
             background-color: #1a1a1a;
             color: white;
             text-align: center;
             padding: 2em;
+            overflow: hidden;
+        }
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(255, 255, 255, 0.05),
+                rgba(255, 255, 255, 0.05) 10px,
+                transparent 10px,
+                transparent 20px
+            );
+            opacity: 0.3;
+            z-index: 0;
+        }
+        footer > * {
+            position: relative;
+            z-index: 1;
         }
         footer a {
             color: #ffc107;
@@ -143,6 +195,9 @@
             }
             .hero p {
                 font-size: 1em;
+            }
+            #projects {
+                background-size: 200% auto;
             }
         }
     </style>

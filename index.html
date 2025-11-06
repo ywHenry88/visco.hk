@@ -3,233 +3,721 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio of Visco showcasing Python, web development, AI, and design projects.">
-    <title>Visco Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Noto+Sans+TC:wght@300;400;600&display=swap" rel="stylesheet">
+    <meta name="description" content="Visco - Leading Hong Kong technology firm specializing in AI, drone technology, marine surveillance, and data-driven solutions with over 20 years of expertise.">
+    <meta name="keywords" content="AI, drone technology, marine surveillance, data analytics, Hong Kong technology, VTOL drone, marine mammals, system development">
+    <meta name="author" content="Visco">
+    <meta property="og:title" content="Visco - Advanced Technology Solutions">
+    <meta property="og:description" content="Leading Hong Kong technology firm specializing in AI, drone technology, and marine surveillance.">
+    <meta property="og:type" content="website">
+    <title>Visco - Advanced Technology Solutions | AI & Drone Innovation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Noto+Sans+TC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <nav>
         <div class="nav-logo">
-            <img src="images/logo.png" alt="Visco Logo" class="nav-logo-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-            <div style="display: none; color: red;">Error: Unable to load logo. Please check the file path.</div>
+            <img src="images/logo.png" alt="Visco Logo" class="nav-logo-image" onerror="this.style.display='none';">
             <span data-lang-key="company-name">Visco</span>
         </div>
         <div class="nav-right">
             <div class="nav-links">
+                <a href="#home" data-lang-key="nav-home">Home</a>
+                <a href="#services" data-lang-key="nav-services">Services</a>
                 <a href="#projects" data-lang-key="nav-projects">Projects</a>
+                <a href="#expertise" data-lang-key="nav-expertise">Expertise</a>
                 <a href="#about" data-lang-key="nav-about">About</a>
                 <a href="#contact" data-lang-key="nav-contact">Contact</a>
             </div>
-            <button class="lang-switcher" onclick="toggleLanguage()">🌐</button>
+            <button class="lang-switcher" onclick="toggleLanguage()" aria-label="Switch Language">
+                <i class="fas fa-globe"></i>
+            </button>
+        </div>
+        <div class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle Menu">
+            <i class="fas fa-bars"></i>
         </div>
     </nav>
-    <section class="hero">
-        <h1 data-lang-key="hero-title">Welcome to Visco</h1>
-        <p data-lang-key="hero-subtitle">Discover our innovative projects in Python, web development, AI, and design</p>
-        <a href="#projects" class="cta-button" data-lang-key="hero-cta">Explore Projects</a>
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-badge" data-lang-key="hero-badge">
+                <i class="fas fa-award"></i> 20+ Years of Excellence
+            </div>
+            <h1 data-lang-key="hero-title">Advanced Technology Solutions for Tomorrow's Challenges</h1>
+            <p data-lang-key="hero-subtitle">Leading Hong Kong technology firm specializing in AI-driven innovations, drone technology, marine surveillance, and data analytics with unparalleled precision</p>
+            <div class="hero-buttons">
+                <a href="#services" class="cta-button primary" data-lang-key="hero-cta-primary">
+                    <i class="fas fa-rocket"></i> Our Services
+                </a>
+                <a href="#contact" class="cta-button secondary" data-lang-key="hero-cta-secondary">
+                    <i class="fas fa-envelope"></i> Get In Touch
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number" data-lang-key="stat-1-number">20+</div>
+                    <div class="stat-label" data-lang-key="stat-1-label">Years Experience</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-lang-key="stat-2-number">100+</div>
+                    <div class="stat-label" data-lang-key="stat-2-label">Projects Completed</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-lang-key="stat-3-number">50+</div>
+                    <div class="stat-label" data-lang-key="stat-3-label">Satisfied Clients</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-lang-key="stat-4-number">15+</div>
+                    <div class="stat-label" data-lang-key="stat-4-label">Industry Awards</div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <a href="#services">
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
     </section>
-    <div class="container">
-        <section id="projects">
-            <h2 class="section-title" data-lang-key="projects-title">Our Projects</h2>
-            <div class="projects-grid">
-                <div class="project">
-                    <h3 data-lang-key="project-0-title">VTOL Drone for Marine Mammal Surveys</h3>
-                    <img src="images/vtol-drone.jpg" alt="VTOL Drone for Marine Mammal Surveys" class="project-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                    <div style="display: none; color: red; margin-bottom: 1em;">Error: Unable to load VTOL drone image. Please check the file path.</div>
-                    <p data-lang-key="project-0-desc">A cutting-edge VTOL drone system for line transect surveys and Photo ID observation of marine mammals, focusing on Chinese white dolphin (<i>Sousa chinensis</i>) and finless porpoise (<i>Neophocaena</i>). Powered by AI-driven image recognition and eco-friendly electric propulsion, it ensures precise data collection with minimal environmental impact.</p>
-                    <ul>
-                        <li data-lang-key="project-0-tech">Technologies: Python, AI, Drone Technology</li>
-                        <li data-lang-key="project-0-features">Features: Real-time species identification, low-carbon footprint, high-resolution imaging</li>
+    
+    <section id="services" class="services-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-lang-key="services-title">Our Core Services</h2>
+                <p class="section-subtitle" data-lang-key="services-subtitle">Comprehensive technology solutions tailored to your needs</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 data-lang-key="service-1-title">Artificial Intelligence</h3>
+                    <p data-lang-key="service-1-desc">Advanced AI solutions including machine learning, computer vision, and deep learning for image recognition, object detection, and predictive analytics.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> <span data-lang-key="service-1-feat-1">Machine Learning Models</span></li>
+                        <li><i class="fas fa-check"></i> <span data-lang-key="service-1-feat-2">Computer Vision Systems</span></li>
+                        <li><i class="fas fa-check"></i> <span data-lang-key="service-1-feat-3">Neural Networks</span></li>
                     </ul>
                 </div>
-                <div class="project">
-                    <h3 data-lang-key="project-1-title">Image Processing Script</h3>
-                    <p data-lang-key="project-1-desc">A Python script for processing images, featuring error handling with OpenCV's <code>cv2.seamlessClone</code> and dataset management for drone-captured dolphin images (top and side views).</p>
-                    <ul>
-                        <li data-lang-key="project-1-tech">Technologies: Python, OpenCV</li>
-                        <li data-lang-key="project-1-features">Features: Error logging, batch processing</li>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-helicopter"></i>
+                    </div>
+                    <h3 data-lang-key="service-2-title">Drone Technology</h3>
+                    <p data-lang-key="service-2-desc">VTOL drone systems for aerial reconnaissance, environmental monitoring, and specialized survey applications with real-time data transmission.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> <span data-lang-key="service-2-feat-1">VTOL Drone Development</span></li>
+                        <li><i class="fas fa-check"></i> <span data-lang-key="service-2-feat-2">Marine Surveillance</span></li>
+                        <li><i class="fas fa-check"></i> <span data-lang-key="service-2-feat-3">Aerial Photography</span></li>
                     </ul>
                 </div>
-                <div class="project">
-                    <h3 data-lang-key="project-2-title">YOLO Dataset Management</h3>
-                    <p data-lang-key="project-2-desc">Scripts to merge and update YOLO dataset labels for AI-driven surveillance, remapping classes like 'dop_side', 'dop_top', 'ship_side', 'ship_top' and updating <code>data.yaml</code>.</p>
-                    <ul>
-                        <li data-lang-key="project-2-tech">Technologies: Python</li>
-                        <li data-lang-key="project-2-features">Features: Class ID remapping, dataset configuration</li>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 data-lang-key="service-3-title">Data Analytics</h3>
+                    <p data-lang-key="service-3-desc">Comprehensive data analysis, visualization, and reporting solutions to transform complex data into actionable insights for informed decision-making.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> <span data-lang-key="service-3-feat-1">Big Data Processing</span></li>
+                        <li><i class="fas fa-check"></i> <span data-lang-key="service-3-feat-2">Real-time Analytics</span></li>
+                        <li><i class="fas fa-check"></i> <span data-lang-key="service-3-feat-3">Custom Dashboards</span></li>
                     </ul>
                 </div>
-                <div class="project">
-                    <h3 data-lang-key="project-3-title">Flask Web Application</h3>
-                    <p data-lang-key="project-3-desc">A responsive Flask app with a header inspired by etaklogistics.com, featuring a leave application form with fixed apply dates and selectable leave ranges.</p>
-                    <ul>
-                        <li data-lang-key="project-3-tech">Technologies: Flask, HTML, CSS, Bootstrap</li>
-                        <li data-lang-key="project-3-features">Features: Responsive design, form handling</li>
-                    </ul>
-                </div>
-                <div class="project">
-                    <h3 data-lang-key="project-4-title">MS SQL Report Generator</h3>
-                    <p data-lang-key="project-4-desc">A Python-based report generator using pyodbc, tkinter, and ReportLab, with a GUI for selecting report types and date ranges, exporting to PDF.</p>
-                    <ul>
-                        <li data-lang-key="project-4-tech">Technologies: Python, pyodbc, tkinter, ReportLab</li>
-                        <li data-lang-key="project-4-features">Features: GUI, PDF export, database integration</li>
-                    </ul>
-                </div>
-                <div class="project">
-                    <h3 data-lang-key="project-5-title">Dynamic Directory Reader</h3>
-                    <p data-lang-key="project-5-desc">A Python script to dynamically read directory structures (e.g., <code>C:\github\py01\Etak\hr.bak</code>) and file contents, encoding binary files in base64.</p>
-                    <ul>
-                        <li data-lang-key="project-5-tech">Technologies: Python</li>
-                        <li data-lang-key="project-5-features">Features: Dynamic file reading, base64 encoding</li>
-                    </ul>
-                </div>
-                <div class="project">
-                    <h3 data-lang-key="project-6-title">Vue.js and Arco Design Exploration</h3>
-                    <p data-lang-key="project-6-desc">Research into Vue.js for building user interfaces and Arco Design for enterprise UI components, aimed at modern web development.</p>
-                    <ul>
-                        <li data-lang-key="project-6-tech">Technologies: Vue.js, Arco Design</li>
-                        <li data-lang-key="project-6-features">Features: Component-based UI, enterprise design</li>
-                    </ul>
-                </div>
-                <div class="project">
-                    <h3 data-lang-key="project-7-title">QR Code Frame and Poster</h3>
-                    <p data-lang-key="project-7-desc">Designed a professional QR code frame and poster for event photo sharing, featuring elegant layouts with gold accents.</p>
-                    <ul>
-                        <li data-lang-key="project-7-tech">Technologies: Graphic Design</li>
-                        <li data-lang-key="project-7-features">Features: Elegant design, event branding</li>
-                    </ul>
-                </div>
-                <div class="project">
-                    <h3 data-lang-key="project-8-title">Dolphin Image Editing</h3>
-                    <p data-lang-key="project-8-desc">Edited drone-captured dolphin images to add realistic eyes, adjust glowing patterns, and change eye color to white for enhanced visual appeal.</p>
-                    <ul>
-                        <li data-lang-key="project-8-tech">Technologies: Image Editing</li>
-                        <li data-lang-key="project-8-features">Features: Realistic enhancements, color adjustments</li>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 data-lang-key="service-4-title">System Development</h3>
+                    <p data-lang-key="service-4-desc">Custom software development, web applications, and enterprise systems designed to streamline operations and enhance productivity.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> <span data-lang-key="service-4-feat-1">Web Applications</span></li>
+                        <li><i class="fas fa-check"></i> <span data-lang-key="service-4-feat-2">Enterprise Software</span></li>
+                        <li><i class="fas fa-check"></i> <span data-lang-key="service-4-feat-3">API Integration</span></li>
                     </ul>
                 </div>
             </div>
+        </div>
+    </section>
+    <section id="projects" class="projects-section">
+    <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-lang-key="projects-title">Featured Projects</h2>
+                <p class="section-subtitle" data-lang-key="projects-subtitle">Innovative solutions that make a difference</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project featured">
+                    <div class="project-badge" data-lang-key="project-badge-featured">Featured</div>
+                    <div class="project-image-wrapper">
+                        <img src="images/vtol-drone.jpg" alt="VTOL Drone for Marine Mammal Surveys" class="project-image" onerror="this.style.display='none';">
+                        <div class="project-overlay">
+                            <i class="fas fa-helicopter fa-3x"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                    <h3 data-lang-key="project-0-title">VTOL Drone for Marine Mammal Surveys</h3>
+                    <p data-lang-key="project-0-desc">A cutting-edge VTOL drone system for line transect surveys and Photo ID observation of marine mammals, focusing on Chinese white dolphin (<i>Sousa chinensis</i>) and finless porpoise (<i>Neophocaena</i>). Powered by AI-driven image recognition and eco-friendly electric propulsion, it ensures precise data collection with minimal environmental impact.</p>
+                        <div class="project-tags">
+                            <span class="tag"><i class="fab fa-python"></i> Python</span>
+                            <span class="tag"><i class="fas fa-brain"></i> AI</span>
+                            <span class="tag"><i class="fas fa-helicopter"></i> Drone Tech</span>
+                        </div>
+                        <ul class="project-features">
+                            <li><i class="fas fa-check-circle"></i> <span data-lang-key="project-0-feat-1">Real-time species identification</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span data-lang-key="project-0-feat-2">Low-carbon footprint</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span data-lang-key="project-0-feat-3">High-resolution imaging</span></li>
+                    </ul>
+                    </div>
+                </div>
+                <div class="project">
+                    <div class="project-icon">
+                        <i class="fas fa-image"></i>
+                    </div>
+                    <div class="project-content">
+                    <h3 data-lang-key="project-1-title">Image Processing Script</h3>
+                    <p data-lang-key="project-1-desc">A Python script for processing images, featuring error handling with OpenCV's <code>cv2.seamlessClone</code> and dataset management for drone-captured dolphin images (top and side views).</p>
+                        <div class="project-tags">
+                            <span class="tag"><i class="fab fa-python"></i> Python</span>
+                            <span class="tag"><i class="fas fa-camera"></i> OpenCV</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project">
+                    <div class="project-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div class="project-content">
+                    <h3 data-lang-key="project-2-title">YOLO Dataset Management</h3>
+                    <p data-lang-key="project-2-desc">Scripts to merge and update YOLO dataset labels for AI-driven surveillance, remapping classes like 'dop_side', 'dop_top', 'ship_side', 'ship_top' and updating <code>data.yaml</code>.</p>
+                        <div class="project-tags">
+                            <span class="tag"><i class="fab fa-python"></i> Python</span>
+                            <span class="tag"><i class="fas fa-brain"></i> YOLO</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project">
+                    <div class="project-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="project-content">
+                    <h3 data-lang-key="project-3-title">Flask Web Application</h3>
+                    <p data-lang-key="project-3-desc">A responsive Flask app with a header inspired by etaklogistics.com, featuring a leave application form with fixed apply dates and selectable leave ranges.</p>
+                        <div class="project-tags">
+                            <span class="tag"><i class="fab fa-python"></i> Flask</span>
+                            <span class="tag"><i class="fab fa-bootstrap"></i> Bootstrap</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project">
+                    <div class="project-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="project-content">
+                    <h3 data-lang-key="project-4-title">MS SQL Report Generator</h3>
+                    <p data-lang-key="project-4-desc">A Python-based report generator using pyodbc, tkinter, and ReportLab, with a GUI for selecting report types and date ranges, exporting to PDF.</p>
+                        <div class="project-tags">
+                            <span class="tag"><i class="fab fa-python"></i> Python</span>
+                            <span class="tag"><i class="fas fa-database"></i> SQL</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project">
+                    <div class="project-icon">
+                        <i class="fas fa-folder-open"></i>
+                    </div>
+                    <div class="project-content">
+                    <h3 data-lang-key="project-5-title">Dynamic Directory Reader</h3>
+                    <p data-lang-key="project-5-desc">A Python script to dynamically read directory structures (e.g., <code>C:\github\py01\Etak\hr.bak</code>) and file contents, encoding binary files in base64.</p>
+                        <div class="project-tags">
+                            <span class="tag"><i class="fab fa-python"></i> Python</span>
+                            <span class="tag"><i class="fas fa-code"></i> Automation</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project">
+                    <div class="project-icon">
+                        <i class="fab fa-vuejs"></i>
+                    </div>
+                    <div class="project-content">
+                    <h3 data-lang-key="project-6-title">Vue.js and Arco Design Exploration</h3>
+                    <p data-lang-key="project-6-desc">Research into Vue.js for building user interfaces and Arco Design for enterprise UI components, aimed at modern web development.</p>
+                        <div class="project-tags">
+                            <span class="tag"><i class="fab fa-vuejs"></i> Vue.js</span>
+                            <span class="tag"><i class="fas fa-palette"></i> Arco Design</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project">
+                    <div class="project-icon">
+                        <i class="fas fa-qrcode"></i>
+                    </div>
+                    <div class="project-content">
+                    <h3 data-lang-key="project-7-title">QR Code Frame and Poster</h3>
+                    <p data-lang-key="project-7-desc">Designed a professional QR code frame and poster for event photo sharing, featuring elegant layouts with gold accents.</p>
+                        <div class="project-tags">
+                            <span class="tag"><i class="fas fa-palette"></i> Design</span>
+                            <span class="tag"><i class="fas fa-qrcode"></i> QR Code</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project">
+                    <div class="project-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <div class="project-content">
+                    <h3 data-lang-key="project-8-title">Dolphin Image Editing</h3>
+                    <p data-lang-key="project-8-desc">Edited drone-captured dolphin images to add realistic eyes, adjust glowing patterns, and change eye color to white for enhanced visual appeal.</p>
+                        <div class="project-tags">
+                            <span class="tag"><i class="fas fa-image"></i> Editing</span>
+                            <span class="tag"><i class="fas fa-fish"></i> Marine</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="expertise" class="expertise-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-lang-key="expertise-title">Our Expertise</h2>
+                <p class="section-subtitle" data-lang-key="expertise-subtitle">Technologies and domains we excel in</p>
+            </div>
+            <div class="expertise-grid">
+                <div class="expertise-category">
+                    <h3 data-lang-key="expertise-cat-1-title"><i class="fas fa-code"></i> Programming Languages</h3>
+                    <div class="expertise-items">
+                        <span class="expertise-item">Python</span>
+                        <span class="expertise-item">JavaScript</span>
+                        <span class="expertise-item">TypeScript</span>
+                        <span class="expertise-item">SQL</span>
+                        <span class="expertise-item">C++</span>
+                    </div>
+                </div>
+                <div class="expertise-category">
+                    <h3 data-lang-key="expertise-cat-2-title"><i class="fas fa-layer-group"></i> Frameworks & Libraries</h3>
+                    <div class="expertise-items">
+                        <span class="expertise-item">Flask</span>
+                        <span class="expertise-item">Vue.js</span>
+                        <span class="expertise-item">React</span>
+                        <span class="expertise-item">TensorFlow</span>
+                        <span class="expertise-item">PyTorch</span>
+                        <span class="expertise-item">OpenCV</span>
+                    </div>
+                </div>
+                <div class="expertise-category">
+                    <h3 data-lang-key="expertise-cat-3-title"><i class="fas fa-brain"></i> AI & Machine Learning</h3>
+                    <div class="expertise-items">
+                        <span class="expertise-item">Deep Learning</span>
+                        <span class="expertise-item">Computer Vision</span>
+                        <span class="expertise-item">YOLO</span>
+                        <span class="expertise-item">Object Detection</span>
+                        <span class="expertise-item">Image Recognition</span>
+                        <span class="expertise-item">Neural Networks</span>
+                    </div>
+                </div>
+                <div class="expertise-category">
+                    <h3 data-lang-key="expertise-cat-4-title"><i class="fas fa-helicopter"></i> Drone Technology</h3>
+                    <div class="expertise-items">
+                        <span class="expertise-item">VTOL Systems</span>
+                        <span class="expertise-item">Aerial Photography</span>
+                        <span class="expertise-item">Flight Control</span>
+                        <span class="expertise-item">Sensor Integration</span>
+                        <span class="expertise-item">Marine Surveys</span>
+                    </div>
+                </div>
+                <div class="expertise-category">
+                    <h3 data-lang-key="expertise-cat-5-title"><i class="fas fa-database"></i> Data & Analytics</h3>
+                    <div class="expertise-items">
+                        <span class="expertise-item">Big Data</span>
+                        <span class="expertise-item">MS SQL</span>
+                        <span class="expertise-item">Data Visualization</span>
+                        <span class="expertise-item">ETL Processes</span>
+                        <span class="expertise-item">Business Intelligence</span>
+                    </div>
+                </div>
+                <div class="expertise-category">
+                    <h3 data-lang-key="expertise-cat-6-title"><i class="fas fa-industry"></i> Industry Domains</h3>
+                    <div class="expertise-items">
+                        <span class="expertise-item">Marine Conservation</span>
+                        <span class="expertise-item">Environmental Monitoring</span>
+                        <span class="expertise-item">Surveillance Systems</span>
+                        <span class="expertise-item">Enterprise Solutions</span>
+                        <span class="expertise-item">Logistics</span>
+                    </div>
+                </div>
+                </div>
+            </div>
         </section>
+    
         <section id="about" class="about-section">
-            <h2 class="section-title" data-lang-key="about-title">About Us</h2>
-            <p data-lang-key="about-desc">Visco is a leading technology firm headquartered in Hong Kong, with over 20 years of experience, renowned for its expertise in artificial intelligence, drone technology, advanced surveillance systems, and system development. Our mission is to provide cutting-edge, data-driven solutions that empower clients to tackle intricate challenges in data analytics, aerial reconnaissance, security infrastructure, and custom system development with unparalleled precision and efficiency.</p>
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-lang-key="about-title">About Visco</h2>
+                <p class="section-subtitle" data-lang-key="about-subtitle">Two decades of technological innovation</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p data-lang-key="about-desc-1">Visco is a leading technology firm headquartered in Hong Kong, with over 20 years of experience, renowned for its expertise in artificial intelligence, drone technology, advanced surveillance systems, and system development.</p>
+                    <p data-lang-key="about-desc-2">Our mission is to provide cutting-edge, data-driven solutions that empower clients to tackle intricate challenges in data analytics, aerial reconnaissance, security infrastructure, and custom system development with unparalleled precision and efficiency.</p>
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-bullseye"></i>
+                            <h4 data-lang-key="about-highlight-1-title">Our Mission</h4>
+                            <p data-lang-key="about-highlight-1-desc">Delivering innovative technology solutions that drive sustainable environmental conservation and business excellence.</p>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-eye"></i>
+                            <h4 data-lang-key="about-highlight-2-title">Our Vision</h4>
+                            <p data-lang-key="about-highlight-2-desc">To be the leading technology partner for organizations seeking advanced AI and drone solutions in Asia-Pacific.</p>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-heart"></i>
+                            <h4 data-lang-key="about-highlight-3-title">Our Values</h4>
+                            <p data-lang-key="about-highlight-3-desc">Innovation, excellence, sustainability, and integrity in every project we undertake.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         </section>
+    
         <section id="contact" class="contact-section">
-            <h2 class="section-title" data-lang-key="contact-title">Contact</h2>
-            <p data-lang-key="contact-text">Reach out to discuss projects or collaborations:</p>
-            <p data-lang-key="contact-email">Email: <a href="mailto:info@visco.hk">info@visco.hk</a></p>
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-lang-key="contact-title">Get In Touch</h2>
+                <p class="section-subtitle" data-lang-key="contact-subtitle">Let's discuss how we can help you achieve your goals</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4 data-lang-key="contact-email-title">Email</h4>
+                            <a href="mailto:info@visco.hk">info@visco.hk</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4 data-lang-key="contact-location-title">Location</h4>
+                            <p data-lang-key="contact-location">Hong Kong</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4 data-lang-key="contact-hours-title">Business Hours</h4>
+                            <p data-lang-key="contact-hours">Mon - Fri: 9:00 AM - 6:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-cta">
+                    <p data-lang-key="contact-cta-text">Ready to start your next project?</p>
+                    <a href="mailto:info@visco.hk" class="cta-button primary">
+                        <i class="fas fa-paper-plane"></i> <span data-lang-key="contact-cta-button">Send us a message</span>
+                    </a>
+                </div>
+            </div>
+        </div>
         </section>
-    </div>
     <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <img src="images/logo.png" alt="Visco Logo" class="footer-logo-image" onerror="this.style.display='none';">
+                    <span data-lang-key="company-name">Visco</span>
+                </div>
+                <p class="footer-tagline" data-lang-key="footer-tagline">Advanced Technology Solutions</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="mailto:info@visco.hk" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4 data-lang-key="footer-services-title">Services</h4>
+                <ul>
+                    <li><a href="#services" data-lang-key="footer-service-1">Artificial Intelligence</a></li>
+                    <li><a href="#services" data-lang-key="footer-service-2">Drone Technology</a></li>
+                    <li><a href="#services" data-lang-key="footer-service-3">Data Analytics</a></li>
+                    <li><a href="#services" data-lang-key="footer-service-4">System Development</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4 data-lang-key="footer-quick-links-title">Quick Links</h4>
+                <ul>
+                    <li><a href="#home" data-lang-key="nav-home">Home</a></li>
+                    <li><a href="#projects" data-lang-key="nav-projects">Projects</a></li>
+                    <li><a href="#about" data-lang-key="nav-about">About</a></li>
+                    <li><a href="#contact" data-lang-key="nav-contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4 data-lang-key="footer-contact-title">Contact</h4>
+                <ul class="footer-contact">
+                    <li><i class="fas fa-envelope"></i> info@visco.hk</li>
+                    <li><i class="fas fa-map-marker-alt"></i> <span data-lang-key="contact-location">Hong Kong</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
         <p data-lang-key="footer-copyright">© 2025 Visco. All rights reserved.</p>
-        <p><a href="mailto:info@visco.hk" data-lang-key="footer-contact">Contact Us</a></p>
+            <p class="footer-developed"><span data-lang-key="footer-developed">Designed & Developed with</span> <i class="fas fa-heart"></i> <span data-lang-key="footer-in-hk">in Hong Kong</span></p>
+        </div>
     </footer>
     <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+
+        // Scroll animation for stats
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.stat-item, .service-card, .project, .expertise-category').forEach(el => {
+            observer.observe(el);
+        });
+
         const translations = {
             en: {
                 "company-name": "Visco",
+                "nav-home": "Home",
+                "nav-services": "Services",
                 "nav-projects": "Projects",
+                "nav-expertise": "Expertise",
                 "nav-about": "About",
                 "nav-contact": "Contact",
-                "hero-title": "Welcome to Visco",
-                "hero-subtitle": "Discover our innovative projects in Python, web development, AI, and design",
-                "hero-cta": "Explore Projects",
-                "projects-title": "Our Projects",
+                "hero-badge": "<i class=\"fas fa-award\"></i> 20+ Years of Excellence",
+                "hero-title": "Advanced Technology Solutions for Tomorrow's Challenges",
+                "hero-subtitle": "Leading Hong Kong technology firm specializing in AI-driven innovations, drone technology, marine surveillance, and data analytics with unparalleled precision",
+                "hero-cta-primary": "<i class=\"fas fa-rocket\"></i> Our Services",
+                "hero-cta-secondary": "<i class=\"fas fa-envelope\"></i> Get In Touch",
+                "stat-1-number": "20+",
+                "stat-1-label": "Years Experience",
+                "stat-2-number": "100+",
+                "stat-2-label": "Projects Completed",
+                "stat-3-number": "50+",
+                "stat-3-label": "Satisfied Clients",
+                "stat-4-number": "15+",
+                "stat-4-label": "Industry Awards",
+                "services-title": "Our Core Services",
+                "services-subtitle": "Comprehensive technology solutions tailored to your needs",
+                "service-1-title": "Artificial Intelligence",
+                "service-1-desc": "Advanced AI solutions including machine learning, computer vision, and deep learning for image recognition, object detection, and predictive analytics.",
+                "service-1-feat-1": "Machine Learning Models",
+                "service-1-feat-2": "Computer Vision Systems",
+                "service-1-feat-3": "Neural Networks",
+                "service-2-title": "Drone Technology",
+                "service-2-desc": "VTOL drone systems for aerial reconnaissance, environmental monitoring, and specialized survey applications with real-time data transmission.",
+                "service-2-feat-1": "VTOL Drone Development",
+                "service-2-feat-2": "Marine Surveillance",
+                "service-2-feat-3": "Aerial Photography",
+                "service-3-title": "Data Analytics",
+                "service-3-desc": "Comprehensive data analysis, visualization, and reporting solutions to transform complex data into actionable insights for informed decision-making.",
+                "service-3-feat-1": "Big Data Processing",
+                "service-3-feat-2": "Real-time Analytics",
+                "service-3-feat-3": "Custom Dashboards",
+                "service-4-title": "System Development",
+                "service-4-desc": "Custom software development, web applications, and enterprise systems designed to streamline operations and enhance productivity.",
+                "service-4-feat-1": "Web Applications",
+                "service-4-feat-2": "Enterprise Software",
+                "service-4-feat-3": "API Integration",
+                "projects-title": "Featured Projects",
+                "projects-subtitle": "Innovative solutions that make a difference",
+                "project-badge-featured": "Featured",
                 "project-0-title": "VTOL Drone for Marine Mammal Surveys",
                 "project-0-desc": "A cutting-edge VTOL drone system for line transect surveys and Photo ID observation of marine mammals, focusing on Chinese white dolphin (<i>Sousa chinensis</i>) and finless porpoise (<i>Neophocaena</i>). Powered by AI-driven image recognition and eco-friendly electric propulsion, it ensures precise data collection with minimal environmental impact.",
-                "project-0-tech": "Technologies: Python, AI, Drone Technology",
-                "project-0-features": "Features: Real-time species identification, low-carbon footprint, high-resolution imaging",
+                "project-0-feat-1": "Real-time species identification",
+                "project-0-feat-2": "Low-carbon footprint",
+                "project-0-feat-3": "High-resolution imaging",
                 "project-1-title": "Image Processing Script",
                 "project-1-desc": "A Python script for processing images, featuring error handling with OpenCV's <code>cv2.seamlessClone</code> and dataset management for drone-captured dolphin images (top and side views).",
-                "project-1-tech": "Technologies: Python, OpenCV",
-                "project-1-features": "Features: Error logging, batch processing",
                 "project-2-title": "YOLO Dataset Management",
                 "project-2-desc": "Scripts to merge and update YOLO dataset labels for AI-driven surveillance, remapping classes like 'dop_side', 'dop_top', 'ship_side', 'ship_top' and updating <code>data.yaml</code>.",
-                "project-2-tech": "Technologies: Python",
-                "project-2-features": "Features: Class ID remapping, dataset configuration",
                 "project-3-title": "Flask Web Application",
                 "project-3-desc": "A responsive Flask app with a header inspired by etaklogistics.com, featuring a leave application form with fixed apply dates and selectable leave ranges.",
-                "project-3-tech": "Technologies: Flask, HTML, CSS, Bootstrap",
-                "project-3-features": "Features: Responsive design, form handling",
                 "project-4-title": "MS SQL Report Generator",
                 "project-4-desc": "A Python-based report generator using pyodbc, tkinter, and ReportLab, with a GUI for selecting report types and date ranges, exporting to PDF.",
-                "project-4-tech": "Technologies: Python, pyodbc, tkinter, ReportLab",
-                "project-4-features": "Features: GUI, PDF export, database integration",
                 "project-5-title": "Dynamic Directory Reader",
                 "project-5-desc": "A Python script to dynamically read directory structures (e.g., <code>C:\\github\\py01\\Etak\\hr.bak</code>) and file contents, encoding binary files in base64.",
-                "project-5-tech": "Technologies: Python",
-                "project-5-features": "Features: Dynamic file reading, base64 encoding",
                 "project-6-title": "Vue.js and Arco Design Exploration",
                 "project-6-desc": "Research into Vue.js for building user interfaces and Arco Design for enterprise UI components, aimed at modern web development.",
-                "project-6-tech": "Technologies: Vue.js, Arco Design",
-                "project-6-features": "Features: Component-based UI, enterprise design",
                 "project-7-title": "QR Code Frame and Poster",
                 "project-7-desc": "Designed a professional QR code frame and poster for event photo sharing, featuring elegant layouts with gold accents.",
-                "project-7-tech": "Technologies: Graphic Design",
-                "project-7-features": "Features: Elegant design, event branding",
                 "project-8-title": "Dolphin Image Editing",
                 "project-8-desc": "Edited drone-captured dolphin images to add realistic eyes, adjust glowing patterns, and change eye color to white for enhanced visual appeal.",
-                "project-8-tech": "Technologies: Image Editing",
-                "project-8-features": "Features: Realistic enhancements, color adjustments",
-                "about-title": "About Us",
-                "about-desc": "Visco is a leading technology firm headquartered in Hong Kong, with over 20 years of experience, renowned for its expertise in artificial intelligence, drone technology, advanced surveillance systems, and system development. Our mission is to provide cutting-edge, data-driven solutions that empower clients to tackle intricate challenges in data analytics, aerial reconnaissance, security infrastructure, and custom system development with unparalleled precision and efficiency.",
-                "contact-title": "Contact",
-                "contact-text": "Reach out to discuss projects or collaborations:",
-                "contact-email": "Email: <a href=\"mailto:info@visco.hk\">info@visco.hk</a>",
+                "expertise-title": "Our Expertise",
+                "expertise-subtitle": "Technologies and domains we excel in",
+                "expertise-cat-1-title": "<i class=\"fas fa-code\"></i> Programming Languages",
+                "expertise-cat-2-title": "<i class=\"fas fa-layer-group\"></i> Frameworks & Libraries",
+                "expertise-cat-3-title": "<i class=\"fas fa-brain\"></i> AI & Machine Learning",
+                "expertise-cat-4-title": "<i class=\"fas fa-helicopter\"></i> Drone Technology",
+                "expertise-cat-5-title": "<i class=\"fas fa-database\"></i> Data & Analytics",
+                "expertise-cat-6-title": "<i class=\"fas fa-industry\"></i> Industry Domains",
+                "about-title": "About Visco",
+                "about-subtitle": "Two decades of technological innovation",
+                "about-desc-1": "Visco is a leading technology firm headquartered in Hong Kong, with over 20 years of experience, renowned for its expertise in artificial intelligence, drone technology, advanced surveillance systems, and system development.",
+                "about-desc-2": "Our mission is to provide cutting-edge, data-driven solutions that empower clients to tackle intricate challenges in data analytics, aerial reconnaissance, security infrastructure, and custom system development with unparalleled precision and efficiency.",
+                "about-highlight-1-title": "Our Mission",
+                "about-highlight-1-desc": "Delivering innovative technology solutions that drive sustainable environmental conservation and business excellence.",
+                "about-highlight-2-title": "Our Vision",
+                "about-highlight-2-desc": "To be the leading technology partner for organizations seeking advanced AI and drone solutions in Asia-Pacific.",
+                "about-highlight-3-title": "Our Values",
+                "about-highlight-3-desc": "Innovation, excellence, sustainability, and integrity in every project we undertake.",
+                "contact-title": "Get In Touch",
+                "contact-subtitle": "Let's discuss how we can help you achieve your goals",
+                "contact-email-title": "Email",
+                "contact-location-title": "Location",
+                "contact-location": "Hong Kong",
+                "contact-hours-title": "Business Hours",
+                "contact-hours": "Mon - Fri: 9:00 AM - 6:00 PM",
+                "contact-cta-text": "Ready to start your next project?",
+                "contact-cta-button": "Send us a message",
+                "footer-tagline": "Advanced Technology Solutions",
+                "footer-services-title": "Services",
+                "footer-service-1": "Artificial Intelligence",
+                "footer-service-2": "Drone Technology",
+                "footer-service-3": "Data Analytics",
+                "footer-service-4": "System Development",
+                "footer-quick-links-title": "Quick Links",
+                "footer-contact-title": "Contact",
                 "footer-copyright": "© 2025 Visco. All rights reserved.",
-                "footer-contact": "Contact Us"
+                "footer-developed": "Designed & Developed with",
+                "footer-in-hk": "in Hong Kong"
             },
             zh: {
                 "company-name": "域高",
+                "nav-home": "主頁",
+                "nav-services": "服務",
                 "nav-projects": "項目",
+                "nav-expertise": "專長",
                 "nav-about": "關於",
                 "nav-contact": "聯繫",
-                "hero-title": "歡迎體驗 域高",
-                "hero-subtitle": "探索我們在 Python、網頁開發、人工智能及設計方面的創新項目",
-                "hero-cta": "探索項目",
-                "projects-title": "我們的項目",
+                "hero-badge": "<i class=\"fas fa-award\"></i> 20+ 年卓越成就",
+                "hero-title": "為明天的挑戰提供先進技術解決方案",
+                "hero-subtitle": "香港領先科技公司，專注於人工智能創新、無人機技術、海洋監控及數據分析，精準無比",
+                "hero-cta-primary": "<i class=\"fas fa-rocket\"></i> 我們的服務",
+                "hero-cta-secondary": "<i class=\"fas fa-envelope\"></i> 聯繫我們",
+                "stat-1-number": "20+",
+                "stat-1-label": "年經驗",
+                "stat-2-number": "100+",
+                "stat-2-label": "完成項目",
+                "stat-3-number": "50+",
+                "stat-3-label": "滿意客戶",
+                "stat-4-number": "15+",
+                "stat-4-label": "行業獎項",
+                "services-title": "核心服務",
+                "services-subtitle": "為您量身定制的綜合技術解決方案",
+                "service-1-title": "人工智能",
+                "service-1-desc": "先進的人工智能解決方案，包括機器學習、計算機視覺和深度學習，用於圖像識別、物體檢測和預測分析。",
+                "service-1-feat-1": "機器學習模型",
+                "service-1-feat-2": "計算機視覺系統",
+                "service-1-feat-3": "神經網絡",
+                "service-2-title": "無人機技術",
+                "service-2-desc": "VTOL無人機系統，用於空中偵察、環境監測和專業調查應用，具備實時數據傳輸功能。",
+                "service-2-feat-1": "VTOL無人機開發",
+                "service-2-feat-2": "海洋監控",
+                "service-2-feat-3": "航拍攝影",
+                "service-3-title": "數據分析",
+                "service-3-desc": "綜合數據分析、可視化和報告解決方案，將複雜數據轉化為可操作的洞察，助力明智決策。",
+                "service-3-feat-1": "大數據處理",
+                "service-3-feat-2": "實時分析",
+                "service-3-feat-3": "定制儀表板",
+                "service-4-title": "系統開發",
+                "service-4-desc": "定制軟件開發、網絡應用程序和企業系統，旨在簡化運營並提高生產力。",
+                "service-4-feat-1": "網絡應用程序",
+                "service-4-feat-2": "企業軟件",
+                "service-4-feat-3": "API集成",
+                "projects-title": "精選項目",
+                "projects-subtitle": "創新解決方案，產生實際影響",
+                "project-badge-featured": "精選",
                 "project-0-title": "VTOL無人機海洋哺乳動物調查",
                 "project-0-desc": "一個尖端的VTOL無人機系統，用於海洋哺乳動物的線性調查和照片識別觀察，專注於中華白海豚（<i>Sousa chinensis</i>）和江豚（<i>Neophocaena</i>）。採用人工智能驅動的圖像識別和環保的電動推進技術，確保精確的數據收集，同時對環境影響最小。",
-                "project-0-tech": "技術：Python，人工智能，無人機技術",
-                "project-0-features": "功能：實時物種識別，低碳足跡，高分辨率成像",
+                "project-0-feat-1": "實時物種識別",
+                "project-0-feat-2": "低碳足跡",
+                "project-0-feat-3": "高分辨率成像",
                 "project-1-title": "圖像處理腳本",
                 "project-1-desc": "一個用於處理圖像的 Python 腳本，具備 OpenCV 的 <code>cv2.seamlessClone</code> 錯誤處理功能，以及管理無人機拍攝的海豚圖像數據集（頂視圖和側視圖）。",
-                "project-1-tech": "技術：Python, OpenCV",
-                "project-1-features": "功能：錯誤記錄，批量處理",
                 "project-2-title": "YOLO 數據集管理",
                 "project-2-desc": "用於合併和更新 YOLO 數據集標籤的腳本，針對人工智能驅動的監控，重新映射類別如 'dop_side'、'dop_top'、'ship_side'、'ship_top'，並更新 <code>data.yaml</code>。",
-                "project-2-tech": "技術：Python",
-                "project-2-features": "功能：類別 ID 重新映射，數據集配置",
                 "project-3-title": "Flask 網頁應用",
                 "project-3-desc": "一個響應式 Flask 應用程式，參考 etaklogistics.com 的標頭設計，包含具有固定申請日期和可選休假範圍的休假申請表單。",
-                "project-3-tech": "技術：Flask, HTML, CSS, Bootstrap",
-                "project-3-features": "功能：響應式設計，表單處理",
                 "project-4-title": "MS SQL 報告生成器",
                 "project-4-desc": "基於 Python 的報告生成器，使用 pyodbc、tkinter 和 ReportLab，具備選擇報告類型和日期範圍的圖形用戶界面，並可導出為 PDF。",
-                "project-4-tech": "技術：Python, pyodbc, tkinter, ReportLab",
-                "project-4-features": "功能：圖形用戶界面，PDF 導出，數據庫整合",
                 "project-5-title": "動態目錄閱讀器",
                 "project-5-desc": "一個動態閱讀目錄結構（例如 <code>C:\\github\\py01\\Etak\\hr.bak</code>）及文件內容的 Python 腳本，將二進制文件編碼為 base64。",
-                "project-5-tech": "技術：Python",
-                "project-5-features": "功能：動態文件閱讀，base64 編碼",
                 "project-6-title": "Vue.js 與 Arco Design 探索",
                 "project-6-desc": "研究 Vue.js 用於構建用戶界面，以及 Arco Design 用於企業 UI 組件，目標是現代網頁開發。",
-                "project-6-tech": "技術：Vue.js, Arco Design",
-                "project-6-features": "功能：基於組件的 UI，企業設計",
                 "project-7-title": "QR Code 框架與海報",
                 "project-7-desc": "為活動照片分享設計了專業的 QR Code 框架和海報，擁有金色點綴的優雅佈局。",
-                "project-7-tech": "技術：圖形設計",
-                "project-7-features": "功能：優雅設計，活動品牌推廣",
                 "project-8-title": "海豚圖像編輯",
                 "project-8-desc": "編輯無人機拍攝的海豚圖像，添加逼真的眼睛，調整發光圖案，並將眼睛顏色更改為白色以增強視覺吸引力。",
-                "project-8-tech": "技術：圖像編輯",
-                "project-8-features": "功能：逼真增強，顏色調整",
-                "about-title": "關於我們",
-                "about-desc": "域高 是一家總部設於香港的領先科技公司，擁有超過 20 年的經驗，以其在人工智能、無人機技術、先進監控系統及系統開發方面的專業知識而聞名。我們的使命是提供尖端、數據驅動的解決方案，幫助客戶以無與倫比的精確度和效率應對數據分析、空中偵察、安全基礎設施及定制系統開發中的複雜挑戰。",
+                "expertise-title": "我們的專長",
+                "expertise-subtitle": "我們擅長的技術和領域",
+                "expertise-cat-1-title": "<i class=\"fas fa-code\"></i> 編程語言",
+                "expertise-cat-2-title": "<i class=\"fas fa-layer-group\"></i> 框架與庫",
+                "expertise-cat-3-title": "<i class=\"fas fa-brain\"></i> 人工智能與機器學習",
+                "expertise-cat-4-title": "<i class=\"fas fa-helicopter\"></i> 無人機技術",
+                "expertise-cat-5-title": "<i class=\"fas fa-database\"></i> 數據與分析",
+                "expertise-cat-6-title": "<i class=\"fas fa-industry\"></i> 行業領域",
+                "about-title": "關於域高",
+                "about-subtitle": "二十年的技術創新",
+                "about-desc-1": "域高是一家總部設於香港的領先科技公司，擁有超過 20 年的經驗，以其在人工智能、無人機技術、先進監控系統及系統開發方面的專業知識而聞名。",
+                "about-desc-2": "我們的使命是提供尖端、數據驅動的解決方案，幫助客戶以無與倫比的精確度和效率應對數據分析、空中偵察、安全基礎設施及定制系統開發中的複雜挑戰。",
+                "about-highlight-1-title": "我們的使命",
+                "about-highlight-1-desc": "提供創新的技術解決方案，推動可持續環境保護和商業卓越。",
+                "about-highlight-2-title": "我們的願景",
+                "about-highlight-2-desc": "成為亞太地區尋求先進人工智能和無人機解決方案的組織的領先技術合作夥伴。",
+                "about-highlight-3-title": "我們的價值觀",
+                "about-highlight-3-desc": "在我們承接的每個項目中，都體現創新、卓越、可持續性和誠信。",
                 "contact-title": "聯繫我們",
-                "contact-text": "聯繫我們以討論項目或合作：",
-                "contact-email": "電郵：<a href=\"mailto:info@visco.hk\">info@visco.hk</a>",
+                "contact-subtitle": "讓我們討論如何幫助您實現目標",
+                "contact-email-title": "電郵",
+                "contact-location-title": "地點",
+                "contact-location": "香港",
+                "contact-hours-title": "營業時間",
+                "contact-hours": "星期一至五：上午9:00 - 下午6:00",
+                "contact-cta-text": "準備開始您的下一個項目？",
+                "contact-cta-button": "發送消息給我們",
+                "footer-tagline": "先進技術解決方案",
+                "footer-services-title": "服務",
+                "footer-service-1": "人工智能",
+                "footer-service-2": "無人機技術",
+                "footer-service-3": "數據分析",
+                "footer-service-4": "系統開發",
+                "footer-quick-links-title": "快速鏈接",
+                "footer-contact-title": "聯繫",
                 "footer-copyright": "© 2025 域高。版權所有。",
-                "footer-contact": "聯繫我們"
+                "footer-developed": "設計與開發",
+                "footer-in-hk": "於香港"
             }
         };
 
@@ -240,14 +728,31 @@
             document.querySelector('html').lang = currentLang === 'en' ? 'en' : 'zh-Hant';
             document.querySelectorAll('[data-lang-key]').forEach(element => {
                 const key = element.getAttribute('data-lang-key');
-                if (translations[currentLang][key].includes('<a') || translations[currentLang][key].includes('<i')) {
-                    element.innerHTML = translations[currentLang][key];
+                const translation = translations[currentLang][key];
+                if (translation) {
+                    if (translation.includes('<') || translation.includes('>')) {
+                        element.innerHTML = translation;
                 } else {
-                    element.textContent = translations[currentLang][key];
+                        element.textContent = translation;
+                    }
                 }
             });
             console.log(`Language switched to ${currentLang === 'en' ? 'English' : 'Traditional Chinese'}`);
         }
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.background = 'linear-gradient(135deg, rgba(26, 26, 26, 0.99), rgba(255, 193, 7, 0.2), rgba(0, 180, 216, 0.2))';
+                nav.style.backdropFilter = 'blur(20px)';
+                nav.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.6), 0 0 50px rgba(255, 193, 7, 0.2)';
+            } else {
+                nav.style.background = 'linear-gradient(135deg, rgba(26, 26, 26, 0.98), rgba(255, 193, 7, 0.15), rgba(0, 180, 216, 0.15))';
+                nav.style.backdropFilter = 'blur(15px)';
+                nav.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.5), 0 0 40px rgba(255, 193, 7, 0.2)';
+            }
+        });
 
         console.log("Visco Portfolio loaded successfully!");
     </script>
